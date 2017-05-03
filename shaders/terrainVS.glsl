@@ -12,7 +12,7 @@ varying vec3 noisefs;
 void main(void)
 {
     vec4 pos1 = u_modelViewMatrix * vec4(a_position,1.0);
-    v_normal = u_normalMatrix * a_normal;//u_normalMatrix * a_normal;
+    v_normal = /*u_normalMatrix */ a_normal;//u_normalMatrix * a_normal;
 	pos = vec3(a_position/8000000.0);//a_normal;
     noisefs= a_noise;
     gl_Position = u_projectionMatrix * pos1;
