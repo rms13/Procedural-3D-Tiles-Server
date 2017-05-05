@@ -64,7 +64,7 @@ vec4 fbm( in vec3 x)
                    0.00, 1.00, 0.00,
                    0.00, 0.00, 1.00);
 
-    for( int i=0; i < 10; i++ ) // 0..octaves
+    for( int i=0; i < 12; i++ ) // 0..octaves
     {
         vec4 n = noised(x);
 		//n = 1.0 - abs(n); // UNCOMMENT FOR RIDGED NOISE
@@ -134,7 +134,7 @@ void main()
     vec4 diffuse = vec4(0., 0., 0., 1.);
     diffuse = vec4(0.95, 0.95, 0.95, 1.);
     vec3 normal = normalize(v_normal);
-    diffuse.xyz *= max(dot(v_normal,normalize(vec3(2.,1.,1.))), 0.01);
+    diffuse.xyz *= max(dot(v_normal,normalize(vec3(1.,1.,2.))), 0.05);
     color.xyz *= diffuse.xyz;
     color = vec4(color.rgb * diffuse.a, diffuse.a);
 
